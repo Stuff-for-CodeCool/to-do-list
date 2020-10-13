@@ -10,7 +10,11 @@ function saveData() {
 }
 
 //  mark done
-function markDone(i) {}
+function markDone(i) {
+    items[i].done = !items[i].done;
+    saveData();
+    buildList();
+}
 
 //  delete
 function deleteEntry(i) {}
@@ -68,6 +72,12 @@ function buildList() {
 
 //  interactions
 document.querySelector("form").addEventListener("submit", addItem);
+document.querySelector("#mark").addEventListener("click", function (event) {
+    event.preventDefault();
+    for (let i = 0; i < items.length; i++) {
+        markDone(i);
+    }
+});
 
 //  start
 let items = loadData();
