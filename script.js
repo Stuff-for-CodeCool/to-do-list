@@ -1,4 +1,8 @@
 //  load data
+function loadData() {
+    let items = localStorage.getItem("ToDoList");
+    return items == null ? [] : JSON.parse(items);
+}
 
 //  save data
 
@@ -13,3 +17,4 @@
 //  interactions
 
 //  start
+let items = loadData();
