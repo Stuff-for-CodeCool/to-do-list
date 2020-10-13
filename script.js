@@ -84,7 +84,7 @@ document.querySelector("#mark").addEventListener("click", function (event) {
 });
 document.querySelector("#delete").addEventListener("click", function (event) {
     event.preventDefault();
-    for (let i = 0; i < items.length; i++) {
+    for (let i = items.length - 1; i >= 0; i--) {
         if (items[i].done) {
             deleteEntry(i);
         }
