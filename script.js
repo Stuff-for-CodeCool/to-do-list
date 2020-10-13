@@ -17,7 +17,11 @@ function markDone(i) {
 }
 
 //  delete
-function deleteEntry(i) {}
+function deleteEntry(i) {
+    items = items.filter((item, index) => index !== i);
+    saveData();
+    buildList();
+}
 
 //  add item
 function addItem(event) {
@@ -76,6 +80,14 @@ document.querySelector("#mark").addEventListener("click", function (event) {
     event.preventDefault();
     for (let i = 0; i < items.length; i++) {
         markDone(i);
+    }
+});
+document.querySelector("#delete").addEventListener("click", function (event) {
+    event.preventDefault();
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].done) {
+            deleteEntry(i);
+        }
     }
 });
 
