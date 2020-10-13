@@ -28,14 +28,18 @@ function addItem(event) {
     event.preventDefault();
     let textField = document.querySelector("#new");
 
-    items.push({
-        text: textField.value,
-        done: false,
-    });
+    if (textField.value.length > 0) {
+        items.push({
+            text: textField.value,
+            done: false,
+        });
 
-    textField.value = "";
-    saveData();
-    buildList();
+        textField.value = "";
+        saveData();
+        buildList();
+    } else {
+        alert("Did you forget to write something?");
+    }
 }
 
 //  build list
