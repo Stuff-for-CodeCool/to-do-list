@@ -104,7 +104,7 @@ button:hover {
 }
 
 span {
-    width: 100%;
+    flex: auto;
 }
 
 #buttons {

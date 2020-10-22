@@ -57,7 +57,7 @@ function buildList() {
         span.innerText = items[i].text;
 
         let markButton = document.createElement("button");
-        markButton.innerText = "Done?";
+        markButton.innerText = items[i].done ? "Not done" : "Done";
         markButton.addEventListener("click", function (event) {
             event.preventDefault();
             markDone(i);
